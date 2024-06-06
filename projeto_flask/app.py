@@ -1,9 +1,9 @@
 from flask import Flask, render_template
 
 lista_produtos = [
-    {"nome": "Coca-cola", "descricao": "veneno"},
+    {"nome": "coca-cola", "descricao": "veneno"},
     {"nome": "Doritos", "descricao": "suja mão"},
-    {"nome": "Água", "descricao": "mata sede"},
+    {"nome": "agua", "descricao": "mata sede"},
 ]
 
 app = Flask(__name__)
@@ -24,5 +24,5 @@ def produtos():
 def produto(nome):
     for produto in lista_produtos:
         if produto["nome"] == nome:
-            return f"{produto['nome']}, {produto['descricao']}"
-    return nome
+            return render_template("produto.html", produto=produto, produtos=lista_produtos)
+            #return f"{produto['nome']}, {produto['descricao']}"

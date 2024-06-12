@@ -5,16 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Produtos</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <h1>Produtos</h1>
-
-    {% for produto in produtos %}
-        <h2>{{ produto.nome }}</h2>
-        <p>{{ produto.descricao }}</p>
-        <a href="/produtos/{{  produto.nome  }}">Ver detalhes</a>
-    {% endfor %}
-    
+    {% block content %}
+    {% endblock %}   
 </body>
 </html>

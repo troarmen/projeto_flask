@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 lista_produtos = [
     {"nome": "coca-cola", "descricao": "veneno"},
-    {"nome": "Doritos", "descricao": "suja mão"},
+    {"nome": "doritos", "descricao": "suja mão"},
     {"nome": "agua", "descricao": "mata sede"},
 ]
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Home</h1>"
+    return render_template("home.html")
 
 @app.route("/contato")
 def contato():
@@ -24,5 +24,8 @@ def produtos():
 def produto(nome):
     for produto in lista_produtos:
         if produto["nome"] == nome:
-            return render_template("produto.html", produto=produto, produtos=lista_produtos)
+            return render_template("produto.html", produto=produto)
             #return f"{produto['nome']}, {produto['descricao']}"
+
+
+app.run()

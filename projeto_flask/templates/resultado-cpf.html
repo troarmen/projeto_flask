@@ -1,0 +1,10 @@
+{% block title %}Resultado CPF{% endblock %}
+
+{% block content %}
+{% if validacao %}
+    <h2>CPF Válido</h2>
+{% else %}
+    <h2>CPF Inválido</h2>
+{% endif %}
+{{ cpf_informado }}
+{% endblock %} 

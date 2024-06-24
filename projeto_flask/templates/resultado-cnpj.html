@@ -1,0 +1,10 @@
+{% block title %}Resultado CNPJ{% endblock %}
+
+{% block content %}
+{% if validacao %}
+    <h2>CNPJ Válido</h2>
+{% else %}
+    <h2>CNPJ Inválido</h2>
+{% endif %}
+{{ cnpj_informado }}
+{% endblock %} 

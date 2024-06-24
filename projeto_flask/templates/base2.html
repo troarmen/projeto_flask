@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="/gerar-cnpj">Gerar CNPJ</a>
+    <a href="/gerar-cpf">Gerar CPF</a>
+    <a href="/validar-cnpj">Validar CNPJ</a>
+    <a href="/validar-cpf">Validar CPF</a>
+    {% block content %}
+    {% endblock %}  
+</body>
+</html>
